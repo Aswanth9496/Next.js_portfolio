@@ -4,21 +4,14 @@ import SectionMobileHead from "./ui/SectionMobileHead";
 
 const Experiance = () => {
   const experianceData = [
+    
     {
-      year: "JAN, 2025 - PRESENT",
-      role: "Full Stack Developer",
-      company: "Subhx Infotech",
-      href: "https://subhx.in/",
-      details:
-        "Build and maintain scalable full-stack applications using Next.js, Node.js, Express.js, and PostgreSQL. Manage projects end-to-end from planning to deployment, collaborate with cross-functional teams, and enhance development quality through code reviews, sprint planning, and best practices.",
-    },
-    {
-      year: "DEC, 2023 - JAN, 2025",
+      year: "APR, 2024 - OCT, 2025",
       role: "MERN Stack Developer Trainee",
       company: "Brotorype",
       href: "https://www.brototype.com/",
       details:
-        "Designed and developed two major projects — Zephyr, a premium e-commerce platform, and Veew. Gained hands-on experience in building scalable web applications, implementing RESTful APIs, and delivering responsive, high-performance user interfaces while honing skills in JavaScript, Node.js, Express.js, MongoDB, and React.js.",
+        "Designed and developed two major projects — Eximius, a premium e-commerce platform, and LocalGigs. Gained hands-on experience in building scalable web applications, implementing RESTful APIs, and delivering responsive, high-performance user interfaces while honing skills in JavaScript, Node.js, Express.js, MongoDB, and React.js.",
     },
   ];
   return (

@@ -6,41 +6,36 @@ const About = () => {
     <div id="about" className="pt-20 lg:px-4">
       <SectionMobileHead title="About" className="mb-3" />
       <p className="text-gray-400 text-[14px] leading-6">
-        I’m a <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">full-stack</span> developer
-        passionate about building scalable, high-performing web applications
-        that deliver both functionality and an excellent user experience. With
-        expertise in modern technologies such as React, Next.js, Node.js, and
-        PostgreSQL, I enjoy solving complex problems at the intersection of
-        design and engineering—creating solutions that are accessible, reliable,
-        and optimized for usability and performance.
+        I am a <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">self-taught Full Stack Developer</span>, 
+        with a foundation in commerce and a <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">BBA degree</span>. 
+        My professional path initially took me into the world of accounting, where I spent two years. However, despite the stability 
+        and structure of this field, I realized that my true passion lay in <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">technology</span>. 
+        The desire for more creativity and problem-solving led me to explore the world of web development.
       </p>
 
       <p className="text-gray-400 text-[14px] leading-6 mt-4">
-        Currently, I work as a Full Stack Developer at Subhx Infotech,
-        contributing to{" "}
-        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">multiple projects</span> and exploring
-        new technologies across frontend and backend engineering. I’ve gained
-        hands-on experience integrating{" "}
-        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">AI models like LLaMA</span>,
-        implementing
-        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">auto KYC verification systems</span>,
-        and working on the company’s flagship platform,{" "}
-        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">CoinSpe.com</span>, a crypto-based
-        application where scalability, security, and performance are critical.
-        These projects have strengthened my skills in designing robust systems,
-        mentoring teams, and deploying production-ready applications.
+        Switching careers wasn’t easy, and the thought of venturing into a tech field seemed daunting at first. 
+        But when a friend introduced me to a <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">coding bootcamp</span>, 
+        I decided to take the leap and dive into the world of programming. Starting from scratch, I taught myself the 
+        fundamentals of <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">JavaScript</span> and the 
+        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer"> MERN stack</span>, driven by a deep curiosity 
+        and passion for building things from the ground up.
       </p>
 
       <p className="text-gray-400 text-[14px] leading-6 mt-4">
-        Beyond my professional role, I’ve also built{" "}
-        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">Veew</span>, a virtual event hosting
-        platform that enables subscriptions, ticketing, and wallet-based
-        transactions. Over the past year, I’ve expanded my foundation in Data
-        Structures & Algorithms, SQL, PostgreSQL, and AWS, while sharing
-        knowledge through seminars on DSA and Microservices Architecture.
-        Outside of coding, I’m always exploring design ideas, experimenting with
-        new technologies, and finding creative ways to push the boundaries of
-        what I can build.
+        The skills I’ve gained through this self-taught journey have not only shaped my technical expertise but have also 
+        instilled in me a sense of <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer">resilience</span> 
+        and a commitment to lifelong learning. I approach development with a keen eye for detail and a focus on creating 
+        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer"> intuitive</span>, 
+        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer"> scalable</span>, and 
+        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer"> impactful</span> digital solutions.
+      </p>
+
+      <p className="text-gray-400 text-[14px] leading-6 mt-4">
+        If you're looking for a developer who combines a strong foundation in 
+        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer"> business</span> with a drive for 
+        <span className="text-white px-1 hover:text-[#49b4bb] cursor-pointer"> tech innovation</span>, let's connect and 
+        collaborate on building the next big thing!
       </p>
     </div>
   );

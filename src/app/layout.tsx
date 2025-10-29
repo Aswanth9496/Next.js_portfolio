@@ -3,33 +3,40 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import { Poppins } from "next/font/google";
 
-
-
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"], 
+  weight: ["400", "500", "600", "700"],
   variable: "--font-poppins",
 });
 
 export const metadata: Metadata = {
-  title: "Muhammed Ashique PK - Full Stack Developer",
-  description:
-    "Full Stack Developer specializing in MERN stack. Turning code into high-performance experiences.",
-  keywords:
-    "Full Stack Developer, MERN Stack, React, Node.js, Next.js, TypeScript",
-  authors: [{ name: "Muhammed Ashique PK" }],
+  metadataBase: new URL("https://yourdomain.com"), // ✅ REQUIRED for OG/Twitter images
+  title: "Aswanth C | Portfolio",
+  description: "MERN Stack Developer crafting modern web experiences.",
+  icons: {
+    icon: "/app/favicon.ico", // ✅ this controls the browser tab icon
+  },
   openGraph: {
-    title: "Muhammed Ashique PK - Full Stack Developer",
-    description:
-      "Full Stack Developer specializing in MERN stack. Turning code into high-performance experiences.",
-    type: "website",
+    title: "Aswanth C | Portfolio",
+    description: "MERN Stack Developer crafting modern web experiences.",
+    url: "https://yourdomain.com",
+    siteName: "Aswanth Portfolio",
+    images: [
+      {
+        url: "/app/og-image.png", // image in your /public folder
+        width: 1200,
+        height: 630,
+        alt: "Aswanth Portfolio Preview",
+      },
+    ],
     locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammed Ashique PK - Full Stack Developer",
-    description:
-      "Full Stack Developer specializing in MERN stack. Turning code into high-performance experiences.",
+    title: "Aswanth C | Portfolio",
+    description: "MERN Stack Developer crafting modern web experiences.",
+    images: ["/og-image.png"], // ✅ can reuse same image
   },
 };
 
@@ -40,7 +47,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}>
+      <body
+        className={`bg-background text-foreground custom-scrollbar overflow-x-hidden ${poppins.className} antialiased`}
+      >
         <Navbar />
         <div className="container">{children}</div>
       </body>

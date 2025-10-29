@@ -36,7 +36,7 @@ const HeroCursor: React.FC = () => {
       className="relative h-[100vh] flex items-center justify-center w-screen overflow-hidden "
     >
       {/* Main cursor glow - subtle white */}
-      <div
+      {/* <div
         className="absolute pointer-events-none w-160 h-160 rounded-full transition-all duration-200 ease-out"
         style={{
           left: mousePos.x - 320,
@@ -45,7 +45,7 @@ const HeroCursor: React.FC = () => {
             "radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.07) 30%, rgba(255, 255, 255, 0.02) 60%, transparent 80%)",
           filter: "blur(30px)",
         }}
-      />
+      /> */}
 
       {/* Inner white core */}
       {/* <div

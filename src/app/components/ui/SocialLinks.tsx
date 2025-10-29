@@ -9,7 +9,7 @@ const SocialLinks = () => {
       <Link
         href={
           process.env.NEXT_PUBLIC_GITHUB_URL ||
-          "https://github.com/AshiqueGhazali"
+          "https://github.com/Aswanth9496"
         }
         target="_blank"
         className="hover:text-white"
@@ -19,7 +19,7 @@ const SocialLinks = () => {
       <Link
         href={
           process.env.NEXT_PUBLIC_LINKEDIN_URL ||
-          "https://www.linkedin.com/in/ashiqueghazali/"
+          "https://www.linkedin.com/in/aswanth-c/"
         }
         target="_blank"
         className="hover:text-white"
@@ -29,7 +29,7 @@ const SocialLinks = () => {
       <Link
         href={
           process.env.NEXT_PUBLIC_INSTA_URL ||
-          "https://www.instagram.com/ashique_pk__/"
+          "https://www.instagram.com"
         }
         target="_blank"
         className="hover:text-white"
@@ -39,7 +39,7 @@ const SocialLinks = () => {
       <Link
         href={
           process.env.NEXT_PUBLIC_LEETCODE_URL ||
-          "https://leetcode.com/u/muhammedashique/"
+          "https://leetcode.com/u/Aswanth7025/"
         }
         target="_blank"
         className="hover:text-white"

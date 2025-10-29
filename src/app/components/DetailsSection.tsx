@@ -11,7 +11,7 @@ const DetailsSection = () => {
       <About />
       <Experiance />
       <Skills />
-      <Projects />
+      {/* <Projects /> */}
       <Footer/>
     </div>
   );

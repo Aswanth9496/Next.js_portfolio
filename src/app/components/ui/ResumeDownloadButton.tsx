@@ -9,7 +9,7 @@ const DownloadButton = () => {
 
     try {
       // Fetch the PDF file
-      const response = await fetch('/ashique-resume.pdf');
+      const response = await fetch('/aswanth.pdf');
       const blob = await response.blob();
       
       // Create a temporary URL for the blob
@@ -18,7 +18,7 @@ const DownloadButton = () => {
       // Create a temporary anchor element and trigger download
       const link = document.createElement('a');
       link.href = url;
-      link.download = 'Ashique-Resume.pdf';
+      link.download = 'Aswanth.pdf';
       document.body.appendChild(link);
       link.click();
       

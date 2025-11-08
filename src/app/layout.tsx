@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourdomain.com"), // ✅ REQUIRED for OG/Twitter images
+  metadataBase: new URL("https://x.com/AswanthC430689"), // ✅ REQUIRED for OG/Twitter images
   title: "Aswanth C | Portfolio",
   description: "MERN Stack Developer crafting modern web experiences.",
   icons: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Aswanth C | Portfolio",
     description: "MERN Stack Developer crafting modern web experiences.",
-    url: "https://yourdomain.com",
+    url: "https://aswanthgovind.site",
     siteName: "Aswanth Portfolio",
     images: [
       {

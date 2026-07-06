@@ -1,0 +1,16 @@
+{
+  "name": "Aswanth C | Full Stack Developer",
+  "short_name": "Aswanth C",
+  "description": "Portfolio of Aswanth C — Full Stack MERN Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0a09",
+  "theme_color": "#49b4bb",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

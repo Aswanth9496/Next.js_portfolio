@@ -1,39 +1,24 @@
+"use client";
 import { ArrowRight } from "lucide-react";
 import React, { useState } from "react";
+
 
 const DownloadButton = () => {
   const [isDownloading, setIsDownloading] = useState(false);
 
-  const handleDownload = async () => {
+  const handleDownload = () => {
     setIsDownloading(true);
+    // Use a temporary anchor with the download attribute — no fetch/blob needed
+    const link = document.createElement("a");
+    link.href = "/Aswanth_Resume (3).pdf";
+    link.download = "Aswanth_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
-    try {
-      // Fetch the PDF file
-      const response = await fetch('/aswanth.pdf');
-      const blob = await response.blob();
-      
-      // Create a temporary URL for the blob
-      const url = window.URL.createObjectURL(blob);
-      
-      // Create a temporary anchor element and trigger download
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'Aswanth.pdf';
-      document.body.appendChild(link);
-      link.click();
-      
-      // Cleanup
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-      
-      // Reset after animation completes
-      setTimeout(() => {
-        setIsDownloading(false);
-      }, 2000);
-    } catch (error) {
-      console.error('Download failed:', error);
+    setTimeout(() => {
       setIsDownloading(false);
-    }
+    }, 2000);
   };
 
   return (
@@ -41,7 +26,7 @@ const DownloadButton = () => {
       onClick={handleDownload}
       disabled={isDownloading}
       className={`group bg-transparent relative w-auto text-[12px] cursor-pointer overflow-hidden rounded-full border py-2 px-2 text-center font-medium transition-all duration-300 ${
-        isDownloading ? 'cursor-not-allowed opacity-80' : ''
+        isDownloading ? "cursor-not-allowed opacity-80" : ""
       }`}
     >
       {!isDownloading ? (
@@ -80,42 +65,6 @@ const DownloadButton = () => {
           <ArrowRight className="animate-arrowFly" />
         </div>
       )}
-      
-      <style jsx>{`
-        @keyframes paperFly {
-          0%, 100% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 1;
-          }
-          50% {
-            transform: translateY(-8px) rotate(-15deg);
-            opacity: 0.7;
-          }
-        }
-        
-        @keyframes arrowFly {
-          0% {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          50% {
-            transform: translateX(10px);
-            opacity: 0.5;
-          }
-          100% {
-            transform: translateX(20px);
-            opacity: 0;
-          }
-        }
-        
-        .animate-paperFly {
-          animation: paperFly 1.5s ease-in-out infinite;
-        }
-        
-        .animate-arrowFly {
-          animation: arrowFly 1s ease-in-out infinite;
-        }
-      `}</style>
     </button>
   );
 };

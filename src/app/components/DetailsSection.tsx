@@ -7,12 +7,17 @@ import Footer from "./Footer";
 
 const DetailsSection = () => {
   return (
-    <div className="min-h-[100vh] lg:px-6  transition-all duration-300 scrollbar-hide">
+    /*
+     * On desktop (lg+): right column of the two-col grid.
+     * Consistent horizontal padding (px-8 xl:px-12) matches the left panel.
+     * pt-16 aligns the first section top with the left panel's profile block.
+     */
+    <div className="w-full px-6 sm:px-8 xl:px-12 pt-6 lg:pt-16 pb-16 scrollbar-hide">
       <About />
       <Experiance />
       <Skills />
-      {/* <Projects /> */}
-      <Footer/>
+      <Projects />
+      <Footer />
     </div>
   );
 };

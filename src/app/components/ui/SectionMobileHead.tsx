@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useRef, useState } from 'react'
 
 const SectionMobileHead = ({className, title}: {className?: string, title: string}) => {
@@ -14,19 +15,21 @@ const SectionMobileHead = ({className, title}: {className?: string, title: strin
       { threshold: 0.1 }
     )
 
-    if (lineRef.current) {
-      observer.observe(lineRef.current)
+    const el = lineRef.current
+    if (el) {
+      observer.observe(el)
     }
 
     return () => {
-      if (lineRef.current) {
-        observer.unobserve(lineRef.current)
+      if (el) {
+        observer.unobserve(el)
       }
+      observer.disconnect()
     }
   }, [])
 
   return (
-    <div className={`flex w-full lg:hidden items-center pointer-events-none gap-2 ${className}`}>
+    <div className={`flex w-full items-center pointer-events-none gap-2 ${className}`}>
       <div 
         ref={lineRef}
         className="w-full h-1 bg-[#FFFFFF]/60 overflow-hidden relative"

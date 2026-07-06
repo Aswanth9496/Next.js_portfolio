@@ -1,79 +1,86 @@
-import Link from "next/link";
 import React from "react";
+import Link from "next/link";
 import projectsData from "../utils/projectData";
-import { motion } from "framer-motion";
-import SectionMobileHead from "./ui/SectionMobileHead";
 
 const Projects = () => {
   return (
-    <div id="projects" className="mt-20 w-full">
-      <SectionMobileHead title="Projects" className="mb-3" />
-      <div className="flex flex-col gap-6 w-full">
-        {projectsData.map((item, index) => (
-          <div
-            key={index}
-            className="w-full lg:px-4 group py-3 lg:py-4 rounded-[5px] hover:border-t border-[#17264b] lg:hover:bg-[#17264b]/30 flex flex-col xl:flex-row transition-all duration-500 gap-4"
-          >
-            <div className="w-full xl:max-w-[200px] flex-shink-0">
-              <img
-                src={item.image}
-                alt={item.name}
-                className="w-full h-auto rounded-[5px]"
-              />
-            </div>
-            <div className="w-full flex-shink-0">
-              <Link
-                href={item.href}
-                target="_blank"
-                className="flex gap-2 items-center"
-              >
-                <p className="text-[16px] font-medium text-[#49b4bb] lg:text-[#FFFFFF] group-hover:lg:text-[#49b4bb] transition-all duration-100">
-                  {`${item.name}`}
-                </p>
-              </Link>
-              <p className="text-[14px] font-normal pointer-events-none text-gray-400 mt-2">
-                {item.details}
-              </p>
-              <div className="overflow-hidden mt-3">
-                <div className="flex flex-wrap gap-2 lg:hidden">
-                  {item.techstack.map((tech, techIndex) => (
-                    <motion.span
-                      key={techIndex}
-                      className="text-[12px] bg-[#17264b] text-gray-400 px-2 py-1 rounded-[3px]"
-                      initial={{ opacity: 0, y: -20 }} // Start above & invisible
-                      whileInView={{ opacity: 1, y: 0 }} // Animate to visible & original position
-                      viewport={{ once: true, amount: 0.2 }} // Trigger once, when 20% visible
-                      transition={{
-                        duration: 0.3,
-                        delay: techIndex * 0.1,
-                        ease: "easeOut",
-                      }}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-              <div className="overflow-hidden mt-3">
-                <div className="hidden lg:flex flex-wrap gap-2 transform translate-y-[-100%] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-                  {item.techstack.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="text-[12px] bg-[#17264b] text-gray-400 px-2 py-1 rounded-[3px] transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-out"
-                      style={{
-                        transitionDelay: `${techIndex * 50}ms`,
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
+    <section id="projects" aria-labelledby="projects-heading" className="mt-20">
+      <h2 id="projects-heading" className="sr-only">
+        Projects
+      </h2>
+
+      {/* Visual section header */}
+      <div className="flex w-full items-center gap-2 mb-4 pointer-events-none">
+        <div className="w-full h-1 bg-white/60" />
+        <span className="flex-shrink-0 font-medium text-[16px] capitalize text-white" aria-hidden="true">
+          Projects
+        </span>
       </div>
-    </div>
+
+      <ul className="flex flex-col gap-1 list-none" role="list" aria-label="Portfolio projects">
+        {projectsData.map((item) => {
+          const isExternal = item.href !== "#";
+          return (
+            <li key={item.name}>
+              <article
+                className="group rounded-md py-4 px-4 hover:bg-[#17264b]/40 border border-transparent hover:border-[#17264b] flex flex-col gap-3 transition-all duration-300"
+                aria-label={`${item.name} — ${item.category}`}
+              >
+                {/* Title row */}
+                <div className="flex items-start justify-between gap-3">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-[15px] font-semibold text-white group-hover:text-[#49b4bb] transition-colors duration-200 leading-snug">
+                      {isExternal ? (
+                        <Link
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline focus:outline-none focus:underline"
+                          aria-label={`Visit ${item.name} — opens in new tab`}
+                        >
+                          {item.name}
+                          <span className="sr-only"> (opens in new tab)</span>
+                        </Link>
+                      ) : (
+                        item.name
+                      )}
+                    </h3>
+                    <p className="text-[12px] text-gray-500 italic mt-0.5">
+                      <span className="sr-only">Category: </span>
+                      {item.category}
+                    </p>
+                  </div>
+                  {isExternal && (
+                    <span
+                      className="flex-shrink-0 text-[11px] font-semibold text-[#49b4bb] border border-[#49b4bb]/40 bg-[#49b4bb]/10 px-2 py-0.5 rounded-full leading-5"
+                      aria-label="Live project"
+                    >
+                      Live
+                    </span>
+                  )}
+                </div>
+
+                {/* Description */}
+                <p className="text-[13px] text-gray-400 leading-relaxed">
+                  {item.details}
+                </p>
+
+                {/* Tech stack badges */}
+                <ul className="flex flex-wrap gap-1.5 list-none" aria-label={`Technologies used in ${item.name}`}>
+                  {item.techstack.map((tech) => (
+                    <li key={tech}>
+                      <span className="text-[11px] font-medium bg-[#17264b] text-gray-400 px-2 py-1 rounded">
+                        {tech}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 };
 
